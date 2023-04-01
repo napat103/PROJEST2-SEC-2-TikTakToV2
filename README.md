@@ -10,7 +10,7 @@
 <h1>Features</h1>
 <ul>
   <li>สามารถ Add, Edit และ Delete user account ได้</li>
-  <li>Navigation Bar - แสดงผลหน้าจอที่ต้องการ (Account และ Slot)
+  <li>Navigation Bar - แสดงผลหน้าจอที่ต้องการ (Account, Slot)
   <li>Spin - หมุน slot 1 รอบ</li>
   <li>Auto Spin - เมื่อกดเปิด slot จะหมุนอัตโนมัติไปเรื่อยๆ จนกว่าเราจะกดปิด slot จะหยุดหมุนอัตโนมัติ</li>
   <li>เมื่อชนะจะมี Popup ขึ้นมาแจ้งว่าชนะพร้อมกับแต้มที่ได้รับ</li>
