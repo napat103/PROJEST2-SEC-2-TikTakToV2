@@ -30,3 +30,6 @@
  
  <h1>แผนภาพการทำงานของ Function / หน้า web</h1>
  <a target="_blank" href="https://www.canva.com/design/DAFe1856IyI/qZv3buWsJ4YyCggyBHQ18Q/view?utm_content=DAFe1856IyI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Work Flow</a>
+ 
+ <h1>Video Link</h1>
+ <a href="https://youtu.be/YqxThEkkMQo">How to play Slot</a>
