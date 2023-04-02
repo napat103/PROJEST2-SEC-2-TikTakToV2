@@ -1,11 +1,11 @@
 # PROJEST2-SEC-2-TikTakToV2
 
 # Members
-64130500063 ภัทรกร คุณเจริญ <br>
-64130500067 ภูผา ป้อมเงิน <br>
-64130500069 ภูรินท์ พีรโชติกพันธุ์ <br>
-64130500103 นภัทร วัฒนรัตนกุล <br>
-64130500120 พัชรพล แก้วเกษ <br>
+64130500063 ภัทรกร คุณเจริญ 19% Mapping, Router, PopUp<br>
+64130500067 ภูผา ป้อมเงิน 19% Fetch, JSON-SERVER, Function<br>
+64130500069 ภูรินท์ พีรโชติกพันธุ์ 22% UI, Component, Router<br>
+64130500103 นภัทร วัฒนรัตนกุล 19% Fetch, VDO, PopUp<br>
+64130500120 พัชรพล แก้วเกษ 21% Mapping, Function, Router<br>
 
 
 <h1>Features</h1>
@@ -30,6 +30,3 @@
  
  <h1>แผนภาพการทำงานของ Function / หน้า web</h1>
  <a target="_blank" href="https://www.canva.com/design/DAFe1856IyI/qZv3buWsJ4YyCggyBHQ18Q/view?utm_content=DAFe1856IyI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Work Flow</a>
- 
- <h1>Video Link</h1>
- <a href="https://youtu.be/YqxThEkkMQo">How to play Slot</a>
