@@ -26,4 +26,7 @@
   <li>หมุน Slot ตามต้องการ โดยสามารถหมุนได้ทีละ 1 ครั้งหรือสามารถกดให้หมุนอัตโนมัติก็ได้เช่นกัน ซึ่งการหมุนแต่ละรอบจะเสียเงินครั้งละ 20 และถ้าแพ้จะไม่ได้รับแต้มเลย แต่ถ้าหากชนะจะได้รับแต้มบวกตาม Rules ที่กำหนดไว้</li>
   <li>ถ้าหากเงินหมด จะไม่สามารถเล่นต่อได้ ให้กด return ออกมาที่หน้าแรก และสามารถทำการแก้ไข ระบุจำนวนเงินของ account นั้นอีกครั้ง เพื่อเข้าเล่น user account เดิม</li>
   <li>ถ้าไม่ต้องการที่จะใช้ user account เดิมเล่นอีก สามารถลบ user account นั้นๆ ออกไปได้เลย</li>
- <ol>
+ </ol>
+ 
+ <h1>แผนภาพการทำงานของ Function / หน้า web</h1>
+ <a href="https://www.canva.com/design/DAFe1856IyI/qZv3buWsJ4YyCggyBHQ18Q/view?utm_content=DAFe1856IyI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Work Flow</a>
