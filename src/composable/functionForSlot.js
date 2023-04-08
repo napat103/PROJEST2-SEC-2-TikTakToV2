@@ -1,12 +1,13 @@
 const shuffle = () => {
-    const slot1 = Math.floor(Math.random() * 9);
-    const slot2 = Math.floor(Math.random() * 9);
-    const slot3 = Math.floor(Math.random() * 9);
-    const allSlot = [slot1, slot2, slot3];
-    return allSlot;
-};
+    // random number 0 to 8
+    const slot1 = Math.floor(Math.random() * 9)
+    const slot2 = Math.floor(Math.random() * 9)
+    const slot3 = Math.floor(Math.random() * 9)
+    const allSlot = [slot1, slot2, slot3]
+    return allSlot
+}
 
-function testWin(array) {
+const testWin = (array) => {
     const slot1 = array[0]
     const slot2 = array[1]
     const slot3 = array[2]
@@ -23,91 +24,73 @@ function testWin(array) {
         return 'YOU LOSE!'
     }
 }
+
 const countScore = (array) => {
     const slot1 = array[0]
     const slot2 = array[1]
     const slot3 = array[2]
 
-    let score = 0
-
     // SAME 3
     if (slot1 === slot2 && slot2 === slot3 && slot1 === 0) {
-        score = 100
-        return score
+        return 100
     }
     if (slot1 === slot2 && slot2 === slot3 && slot1 === 1) {
-        score = 200
-        return score
+        return 200
     }
     if (slot1 === slot2 && slot2 === slot3 && slot1 === 2) {
-        score = 300
-        return score
+        return 300
     }
     if (slot1 === slot2 && slot2 === slot3 && slot1 === 3) {
-        score = 400
-        return score
+        return 400
     }
     if (slot1 === slot2 && slot2 === slot3 && slot1 === 4) {
-        score = 500
-        return score
+        return 500
     }
     if (slot1 === slot2 && slot2 === slot3 && slot1 === 5) {
-        score = 600
-        return score
+        return 600
     }
     if (slot1 === slot2 && slot2 === slot3 && slot1 === 6) {
-        score = 700
-        return score
+        return 700
     }
     if (slot1 === slot2 && slot2 === slot3 && slot1 === 7) {
-        score = 800
-        return score
+        return 800
     }
     if (slot1 === slot2 && slot2 === slot3 && slot1 === 8) {
-        score = 1000
-        return score
+        return 1000
     }
+
     // SAME 2
     if (((slot1 === slot2 && slot3 === 8) && slot1 === 0) || ((slot1 === slot3 && slot2 === 8) && slot1 === 0) || ((slot2 === slot3 && slot1 === 8) && slot2 === 0)) {
-        score = 10
-        return score
+        return 10
     }
     if (((slot1 === slot2 && slot3 === 8) && slot1 === 1) || ((slot1 === slot3 && slot2 === 8) && slot1 === 1) || ((slot2 === slot3 && slot1 === 8) && slot2 === 1)) {
-        score = 20
-        return score
+        return 20
     }
     if (((slot1 === slot2 && slot3 === 8) && slot1 === 2) || ((slot1 === slot3 && slot2 === 8) && slot1 === 2) || ((slot2 === slot3 && slot1 === 8) && slot2 === 2)) {
-        score = 30
-        return score
+        return 30
     }
     if (((slot1 === slot2 && slot3 === 8) && slot1 === 3) || ((slot1 === slot3 && slot2 === 8) && slot1 === 3) || ((slot2 === slot3 && slot1 === 8) && slot2 === 3)) {
-        score = 40
-        return score
+        return 40
     }
     if (((slot1 === slot2 && slot3 === 8) && slot1 === 4) || ((slot1 === slot3 && slot2 === 8) && slot1 === 4) || ((slot2 === slot3 && slot1 === 8) && slot2 === 4)) {
-        score = 50
-        return score
+        return 50
     }
     if (((slot1 === slot2 && slot3 === 8) && slot1 === 5) || ((slot1 === slot3 && slot2 === 8) && slot1 === 5) || ((slot2 === slot3 && slot1 === 8) && slot2 === 5)) {
-        score = 60
-        return score
+        return 60
     }
     if (((slot1 === slot2 && slot3 === 8) && slot1 === 6) || ((slot1 === slot3 && slot2 === 8) && slot1 === 6) || ((slot2 === slot3 && slot1 === 8) && slot2 === 6)) {
-        score = 70
-        return score
+        return 70
     }
     if (((slot1 === slot2 && slot3 === 8) && slot1 === 7) || ((slot1 === slot3 && slot2 === 8) && slot1 === 7) || ((slot2 === slot3 && slot1 === 8) && slot2 === 7)) {
-        score = 80
-        return score
+        return 80
     }
     // SAME 77
     if ((slot1 === slot2 && slot1 === 8) || (slot1 === slot3 && slot1 === 8) || (slot2 === slot3 && slot2 === 8)) {
-        score = 500
-        return score
+        return 500
     }
     else {
-        return score
+        return 0
     }
 }
 
-export { shuffle, testWin, countScore };
+export { shuffle, testWin, countScore }
