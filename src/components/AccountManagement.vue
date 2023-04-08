@@ -6,7 +6,6 @@ import { setCurrentUser } from '../composable/getEditInformation'
 import { RouterLink } from "vue-router"
 import AddEditAccount from "./AddEditAccount.vue"
 
-
 const account = ref([])
 const currentUser = ref()
 const currentComponent = ref('AccountManagement') //control what component will work
@@ -34,7 +33,7 @@ const cancelFromAddEdit = async () => {
         editAccount.value = undefined //clear text input
         account.value = await getAccount()
     } catch (err) {
-        console.log(`ERROR: can't read data, ${error}`)
+        console.log(`ERROR: can't read data, ${err}`)
     }
 }
 
@@ -43,7 +42,6 @@ const deleteAcc = async (playId) => {
         const res = await fetch(`http://localhost:5000/Player/${playId}`, { method: 'DELETE' }) //Delete backend
         if (res.ok) {
             account.value = account.value.filter((acc) => acc.id !== playId) //Delete frontend
-            // alert(`Delete success`)
         } else {
             throw new Error(`Cannot delete`)
         }
@@ -65,17 +63,16 @@ const checkUpdateAccount = (account) => {
 }
 
 const addNewAccount = async (newAccount) => {
-    // console.log(newAccount)
     try {
         checkUpdateAccount(newAccount)
-        const res = await fetch('http://localhost:5000/Player', {
+        const res = await fetch('http://localhost:5000/Player', 
+        {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(newAccount)
+            body: JSON.stringify(newAccount) //Object to json
         }) //Add account at backend
         // method post. if it success, it will return status 201 / other methods return status 200
         if (res.status === 201) {
-            // console.log('Okay')
             const addedAccount = await res.json() //keep info that added from backend
             account.value.push(addedAccount) //add account at frontend
             setCurrentComponent('AccountManagement')
@@ -90,9 +87,9 @@ const addNewAccount = async (newAccount) => {
 const modifyAccount = async (updateAccount) => {
     try {
         checkUpdateAccount(updateAccount)
-        const res = await fetch(`http://localhost:5000/Player/${updateAccount.id}`, {
-            method: 'PUT', // put = replace all record, all field
-            // patch = edit some field
+        const res = await fetch(`http://localhost:5000/Player/${updateAccount.id}`, 
+        {
+            method: 'PUT', // put = replace all record, all field // patch = edit some field
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updateAccount) //edit backend
         })
@@ -101,7 +98,9 @@ const modifyAccount = async (updateAccount) => {
             const modifyAccount = await res.json()
             account.value.map((acc) => { // map: change item in array
                 if (acc.id === modifyAccount.id) {
+                    acc.icon = modifyAccount.icon
                     acc.name = modifyAccount.name
+                    acc.money = modifyAccount.money
                 }
                 return acc
             })
@@ -139,19 +138,26 @@ const setEditMode = (account) => {
                 <div class=" flex flex-col p-2">
                     <RouterLink :to="{ name: 'Slot' }" active-class="active" @click="editCurrentUser(acc.id)"
                         class="bg-yellow-400 p-12 my-6 rounded-full border-black border-4 text-6xl hover:bg-green-500 hover:border-white hover:text-white hover:font-bold">
-                        {{ acc.icon }}</RouterLink>
-                    <p class="text-xl text-white"><b>Name: </b>{{ acc.name }} <br><b>Played: </b>{{ acc.total }}<br> <b>Score:
-                        </b>{{ acc.money }}</p>
-                    <button @click="setEditMode(acc)" class="mt-5 rounded-md border-2 border-black bg-yellow-500 m-2
-                    hover:bg-green-500 hover:border-white hover:text-white hover:font-bold">EDIT</button>
-                    <button @click="deleteAcc(acc.id)" class="rounded-md border-2 border-black bg-red-500 m-3 
-                    hover:bg-red-600 hover:font-bold hover:text-white hover:border-white ">DELETE</button>
+                        {{ acc.icon }}
+                    </RouterLink>
+                    <p class="text-xl text-white">
+                        <b>Name: </b>{{ acc.name }} <br>
+                        <b>Played: </b>{{ acc.total }}<br> 
+                        <b>Score: </b>{{ acc.money }}
+                    </p>
+                    <button @click="setEditMode(acc)" class="mt-5 rounded-md border-2 border-black bg-yellow-500 m-2 font-semibold
+                    hover:bg-green-500 hover:border-white hover:text-white hover:font-bold">
+                        EDIT
+                    </button>
+                    <button @click="deleteAcc(acc.id)" class="rounded-md border-2 border-black bg-red-500 m-3 font-semibold
+                    hover:bg-red-600 hover:font-bold hover:text-white hover:border-white ">
+                        DELETE
+                    </button>
                 </div>
             </div>
             <div v-if="currentComponent === 'AccountManagement'" @click="setCurrentComponent('AddEditAccount')"
                 class="mt-7 justify-center items-center flex">
-                <button
-                    class="rounded-full p-3 text-3xl font-extrabold opacity-70 hover:opacity-100 border-2 border-black bg-black hover:bg-black hover:border-white text-white">
+                <button class="rounded-full p-3 text-3xl font-extrabold opacity-70 hover:opacity-100 border-2 border-black bg-black hover:bg-black hover:border-white text-white">
                     +
                 </button>
             </div>
