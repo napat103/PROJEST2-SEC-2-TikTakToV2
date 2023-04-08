@@ -33,8 +33,6 @@ onMounted(() => {
     // account.value = await getAccount()
     if (props.account === undefined) {
         //add
-        updateAccount.value.name = ""
-        updateAccount.value.icon = ""
         updateAccount.value = {
             name: '',
             icon: items[shuffleIcon()],
@@ -43,7 +41,6 @@ onMounted(() => {
             winCount: 0,
             historys: []
         }
-        updateAccount.value.name = 'Unknown'
     } else {
         //edit
         updateAccount.value = props.account //set new value
@@ -70,16 +67,16 @@ onMounted(() => {
         </div>
         <div class="justify-center items-center flex m-4">
             <!-- emit child send to parents(AccountManagement) -->
-            <button @click="$emit('cancel')" class="bg-red-500 p-2 border-2 border-black rounded-md m-4 font-bold text-3xl
-                            hover:bg-red-600 hover:font-bold hover:text-white hover:border-white">
+            <button @click="$emit('cancel')" 
+            class="bg-red-500 p-2 border-2 border-black rounded-md m-4 font-bold text-3xl hover:bg-red-600 hover:font-bold hover:text-white hover:border-white">
                 CANCEL
             </button>
-            <button @click="$emit('add', updateAccount)" v-if="props.account === undefined" class="bg-green-500 p-2 border-2 border-black rounded-md m-4 font-bold text-3xl
-                            hover:bg-green-500 hover:border-white hover:text-white hover:font-bold">
+            <button @click="$emit('add', updateAccount)" v-if="props.account === undefined" 
+            class="bg-green-500 p-2 border-2 border-black rounded-md m-4 font-bold text-3xl hover:bg-green-500 hover:border-white hover:text-white hover:font-bold">
                 ADD
             </button>
-            <button @click="$emit('edit', updateAccount)" v-if="props.account !== undefined" class="bg-green-500 p-2 border-2 border-black rounded-md m-4 font-bold text-3xl
-                            hover:bg-green-500 hover:border-white hover:text-white hover:font-bold">
+            <button @click="$emit('edit', updateAccount)" v-if="props.account !== undefined"
+            class="bg-green-500 p-2 border-2 border-black rounded-md m-4 font-bold text-3xl hover:bg-green-500 hover:border-white hover:text-white hover:font-bold">
                 DONE
             </button>
         </div>
